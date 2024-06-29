@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Books</title>
+<h1>There are some books</h1>
+</head>
+<body>
+<h1>Books</h1>
+{% for book in data_books %}
+<ol>
+    <li><h2>{{book.title}}</h2></li>
+</ol>
+{%endfor%}
+</body>
+</html>
