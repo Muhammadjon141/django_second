@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>Authors</h1>
-{% for authors in data_authors %}
+{% for authors, comment in zip(data_authors, data_comment) %}
 <ol>
-    <li><h2>{{authors.first_name}}</h2></li>
+    <li><h2>{{authors.first_name}}ning kitobiga {{"comment"}} comment qoldirildi</h2></li>
 </ol>
 {%endfor%}
 </body>

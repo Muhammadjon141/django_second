@@ -6,9 +6,10 @@
 </head>
 <body>
 <h1>Books</h1>
-{% for book in data_books %}
+<h1>{% type(data_books) %}</h1>
+{% for book, user in zip(data_books, data_user)%}
 <ol>
-    <li><h2>{{book.title}}</h2></li>
+    <li><h2>{{book.title}} kitobga {{user}} foudalanuvchi izoh qoldirdi</h2></li>
 </ol>
 {%endfor%}
 </body>
