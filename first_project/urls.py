@@ -24,4 +24,5 @@ urlpatterns = [
     path('register/', include('edu_center.urls')),
     path('books/', include('edu_center.urls')),
     path('authors/', include('edu_center.urls')),
+    path("comments/", include('edu_center.urls'))
 ]
