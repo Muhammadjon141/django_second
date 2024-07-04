@@ -1,6 +1,6 @@
 from typing import Any
 from django.db import models
-
+from .helpers import Save_image
 # Create your models here.
 class Authors(models.Model):
     first_name = models.CharField(max_length=100, null=False)
@@ -17,6 +17,7 @@ class Book(models.Model):
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     count = models.PositiveIntegerField()
     price = models.FloatField()
+    image = models.ImageField(upload_to=Save_image.save_image)
     create_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return f"{self.title}"# self.description, self.author, self.count, self.price, self.create_date]}"
