@@ -7,6 +7,7 @@ class Authors(models.Model):
     last_name = models.CharField(max_length=50, null=False)
     autobiorophy = models.TextField()
     birth_date = models.DateField()
+    image = models.ImageField(upload_to=Save_image.save_image_author)
     create_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return f"{self.first_name, self.last_name, self.autobiorophy, self.birth_date, self.create_date}"
@@ -20,7 +21,7 @@ class Book(models.Model):
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     count = models.PositiveIntegerField()
     price = models.FloatField()
-    image = models.ImageField(upload_to=Save_image.save_image)
+    image = models.ImageField(upload_to=Save_image.save_image_book)
     create_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return f"{self.title, self.description, self.author, self.count, self.price, self.create_date}"

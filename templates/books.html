@@ -3,19 +3,19 @@
 {% block content %}
     {% for book in data_books %}
         <div class="card" style="width: 18rem;">
-            <img src="{{book.image.url}}", alt="Rasm topilmadi">
-            <div class="card-body">
-            <h5 class="card-title">{{book.title}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <img src="{{ book.image.url }}" class="card-img-top" alt="rasm topilmadi">
+                <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
             <ul class="list-group list-group-flush">
-            <li class="list-group-item">Nomi: {{book.title}}</li>
-            <li class="list-group-item">Narxi: {{book.price}}</li>
-            <li class="list-group-item">Soni: {{book.count}}</li>
+                <li class="list-group-item">Nomi: {{book.title}}{{book.image.url}}</li>
+                <li class="list-group-item">Narxi: {{ book.price }}</li>
+                <li class="list-group-item">Soni: {{ book.count }}</li>
             </ul>
             <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
             </div>
         </div>
     {% endfor %}

@@ -2,8 +2,6 @@ from django.contrib import admin
 from import_export.admin import ImportExportActionModelAdmin
 from .models import Book, Authors, User, Comments
 
-
-
 @admin.register(Book)
 class BookAdmin(ImportExportActionModelAdmin):
     list_display = ('title', 'author_full_name')
@@ -14,9 +12,6 @@ class BookAdmin(ImportExportActionModelAdmin):
 
     def author_full_name(self, obj):
         return obj.author.full_name()
-    
-    
-    
 
 @admin.register(Authors)
 class AuthorsAdmin(ImportExportActionModelAdmin):
@@ -27,10 +22,6 @@ class AuthorsAdmin(ImportExportActionModelAdmin):
     ordering = ('first_name', )
     search_fields = ('first_name',)
     propulated_fields = ('first_name', )
-
-
-    def author_full_name(self, obj):
-        return obj.author.full_name()
     
 @admin.register(User)
 class UserAdmin(ImportExportActionModelAdmin):

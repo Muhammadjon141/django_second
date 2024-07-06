@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
     <h1>Authors</h1>
-    {% for authors in data_authors %}
+    {% for authors in data_author %}
+        <img src="{{ authors.image.url}}" alt="rasm yo'q">
         <ol>
             <h2>{{authors_count}}. {{authors.first_name}}ning kitobiga comment qoldirildi</h2>
         </ol>
