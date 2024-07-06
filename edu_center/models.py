@@ -9,7 +9,10 @@ class Authors(models.Model):
     birth_date = models.DateField()
     create_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
-        return f"{self.first_name}"#, self.last_name, self.autobiorophy, self.birth_date, self.create_date]}"
+        return f"{self.first_name, self.last_name, self.autobiorophy, self.birth_date, self.create_date}"
+    
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
 
 class Book(models.Model):
     title = models.CharField(max_length=100, null=False)
@@ -20,8 +23,11 @@ class Book(models.Model):
     image = models.ImageField(upload_to=Save_image.save_image)
     create_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
-        return f"{self.title}"# self.description, self.author, self.count, self.price, self.create_date]}"
+        return f"{self.title, self.description, self.author, self.count, self.price, self.create_date}"
 
+    def full_name(self):
+        return f"{self.title} {self.price}"
+    
 class User(models.Model):
     first_name = models.CharField(max_length=50, null=False)
     last_name = models.CharField(max_length=50, null=False)
@@ -29,6 +35,9 @@ class User(models.Model):
     birth_date = models.DateField()
     create_time = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name} {self.user_name} {self.birth_date} {self.create_time}"
+
+    def full_name(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
 class Comments(models.Model):
@@ -37,4 +46,7 @@ class Comments(models.Model):
     comment = models.TextField()
     create_time = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
+        return f"{self.user} {self.book} {self.comment} {self.create_time}"
+    
+    def full_info(self) -> str:
         return f"{self.comment[:10:]} to {self.book.title}"

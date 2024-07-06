@@ -8,5 +8,4 @@ urlpatterns = [
     path('books/', books, name='books'),
     path('authors/', authors, name='authors'),
     path('comments/', comments, name='comments'),
-    path('all/', all, name='all')
 ]

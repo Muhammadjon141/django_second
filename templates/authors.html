@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Authors</title>
-<h1>There are some Authors</h1>
-</head>
-<body>
-<h1>Authors</h1>
-{% for authors in data_authors %}
-<ol>
-    <h2>{{authors_count}}. {{authors.first_name}}ning kitobiga comment qoldirildi</h2>
-</ol>
-{%endfor%}
-</body>
-</html>
+{% extends 'all.html' %}
+{% load static %}
+{% block content %}
+    <h1>Authors</h1>
+    {% for authors in data_authors %}
+        <ol>
+            <h2>{{authors_count}}. {{authors.first_name}}ning kitobiga comment qoldirildi</h2>
+        </ol>
+    {%endfor%}
+{% endblock %}

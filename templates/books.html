@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Books</title>
-<h1>There are some books</h1>
-</head>
-<body>
-<h1>Books</h1>
-{% for book in data_books %}
-<ol>
-    <li><h2>{{book.title}} kitobga izoh qoldirildi</h2></li>
-</ol>
-{%endfor%}
-</body>
-</html>
+{% extends 'all.html' %}
+{% load static %}
+{% block content %}
+    {% for book in data_books %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{book.image.url}}", alt="Rasm topilmadi">
+            <div class="card-body">
+            <h5 class="card-title">{{book.title}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nomi: {{book.title}}</li>
+            <li class="list-group-item">Narxi: {{book.price}}</li>
+            <li class="list-group-item">Soni: {{book.count}}</li>
+            </ul>
+            <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

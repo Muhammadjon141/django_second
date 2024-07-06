@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-</head>
-<body>
+{% extends 'all.html' %}
+{% load static %}
+{% block content %}
     <table >
         <tr  >
             <th >ism</th>
@@ -18,8 +14,4 @@
     <h1>Hello World</h1>
     
     <p>Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks. An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block.[89] Thus, the program's visual structure accurately represents its semantic structure.[90] This feature is sometimes termed the off-side rule. Some other languages use indentation this way; but in most, indentation has no semantic meaning. The recommended indent size is four spaces.</p>
-        
-<!-- #region -->
-<!-- #endregion -->
-</body>
-</html>
+{% endblock %}
