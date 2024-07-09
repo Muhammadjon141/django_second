@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'edu_center',
     'import_export',
+    'users',
 ]
 
 MIDDLEWARE = [
